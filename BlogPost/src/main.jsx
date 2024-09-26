@@ -13,26 +13,6 @@ import Blog from './components/Blog/Blog.jsx'
 import LogIn from './components/LogIn/LogIn.jsx'
 import SignUp from './components/SignUp/SignUp.jsx'
 
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Layout/>,
-//     children: [
-//       {
-//         path: "",
-//         element: <Home />
-//       },
-//       {
-//         path: "about",
-//         element: <About />
-//       },
-//       {
-//         path: "contact",
-//         element: <Contact />
-//       }
-//     ]
-//   }
-// ])
 
 const router = createBrowserRouter(
   createRoutesFromElements(
