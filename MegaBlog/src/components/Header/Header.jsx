@@ -36,26 +36,22 @@ function Header() {
     },
   ];
 
-  const navHadler = function () {
-    document.getElementById("hiddenNav").style.display = "block";
-  };
-
   return (
     <header className="py-3 m-10 shadow bg-gray-950 flex justify-center">
       <div>
-        <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-          <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <Link
-              to={'/'}
-              class="flex items-center space-x-3 rtl:space-x-reverse"
+              to={"/"}
+              className="flex items-center space-x-3 rtl:space-x-reverse"
             >
               <Logo width="100px" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 DangiBlog
               </span>
             </Link>
-            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            {authStatus && (
+            <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+              {authStatus && (
                 <li className="list-none">
                   <LogoutBtn />
                 </li>
@@ -63,13 +59,13 @@ function Header() {
               <button
                 data-collapse-toggle="navbar-sticky"
                 type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 aria-controls="navbar-sticky"
                 aria-expanded="false"
               >
-                <span class="sr-only">Open main menu</span>
+                <span className="sr-only">Open main menu</span>
                 <svg
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -86,24 +82,23 @@ function Header() {
               </button>
             </div>
             <div
-              class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+              className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
               id="navbar-sticky"
             >
               <ul className="flex ml-auto">
-              {navItems.map((item) =>
-                item.active ? (
-                  <li key={item.name}>
-                    <button
-                      onClick={() => navigate(item.slug)}
-                      className="inline-bock px-6 py-2 text-white duration-200 hover:bg-blue-100 hover:text-gray-800 rounded-full"
-                    >
-                      {item.name}
-                    </button>
-                  </li>
-                ) : null
-              )}
-              
-            </ul>
+                {navItems.map((item) =>
+                  item.active ? (
+                    <li key={item.name}>
+                      <button
+                        onClick={() => navigate(item.slug)}
+                        className="inline-bock px-6 py-2 text-white duration-200 hover:bg-blue-100 hover:text-gray-800 rounded-full"
+                      >
+                        {item.name}
+                      </button>
+                    </li>
+                  ) : null
+                )}
+              </ul>
             </div>
           </div>
         </nav>

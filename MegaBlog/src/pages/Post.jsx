@@ -21,7 +21,7 @@ export default function Post() {
                 else navigate("/");
             });
         } else navigate("/");
-    }, [slug, navigate]);
+    }, [slug, navigate,userData]);
 
     const deletePost = () => {
         appwriteService.deletePost(post.$id).then((status) => {
@@ -56,9 +56,9 @@ export default function Post() {
                     )}
                 </div>
                 <div className="w-full mb-6">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
+                    <h1 className="text-2xl font-bold text-gray-200">{post.title}</h1>
                 </div>
-                <div className="browser-css">
+                <div className="browser-css text-white">
                     {parse(post.content)}
                     </div>
             </Container>
